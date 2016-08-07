@@ -10,6 +10,7 @@ namespace SignatureCreator.Processes
     {
         public long Id { get; set; }
         public byte[] Data { get; set; }
+        public byte[] Hash { get; set; }
     }
 
     class BlockManagment
@@ -19,7 +20,7 @@ namespace SignatureCreator.Processes
 
         private readonly Thread[] workers;
         private readonly EventWaitHandle addBlockWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
-       
+
         private const int MAX_QUEUE_SIZE = 5;
         private Hash256 hasher = new Hash256();
 
@@ -117,6 +118,7 @@ namespace SignatureCreator.Processes
         private void Action(Block block)
         {
             byte[] hash = this.hasher.GetHash(block.Data);
+            block.Hash = hash;
             string hashString = this.hasher.ToString(hash);
             Console.WriteLine("BlockId = {0}, Hash: {1}", block.Id, hashString);
         }

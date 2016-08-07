@@ -27,6 +27,7 @@ namespace SignatureCreator
                 sourceFile = GetInputStream(filePath);
                 this.thProcess = new ThreadsProcess(sourceFile, blockLen);
                 bool result = this.thProcess.Run();
+       
             }
             catch (FileNotFoundException fnfEx)
             {
@@ -55,20 +56,15 @@ namespace SignatureCreator
             string filePath;
             int blockLen;
 
-            if (!options.Parse(args))
-            {
-                filePath = "D:/STALKER_COP_F.mdf";
-                blockLen = 1048576;
-            } else
-            {
-                options.GetOptions(out filePath, out blockLen);
-            }
+            if (!options.Parse(args)) return;
+
+            options.GetOptions(out filePath, out blockLen);
             Console.WriteLine("Starting create hash:");
 
             Program program = new Program();
             program.StartCalculate(filePath, blockLen);
-
-            //Console.ReadKey();
+            Console.Write("Press any key..");
+            Console.ReadKey();
         }
        
     }

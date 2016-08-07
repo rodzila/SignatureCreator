@@ -6,20 +6,22 @@ namespace SignatureCreator.Processes
 {
     class ThreadsProcess
     {
-        int blockLen;
-        Stream sourceFile; 
+        private int blockLen;
+        Stream sourceFile;
+        private byte[] data;
 
         private Thread queueThread;
-
         private BlockManagment blockManagment;
 
         private bool isAborder;
+
 
         public ThreadsProcess(Stream sourceFile, int blockLen)
         {
             this.blockLen = blockLen;
             this.sourceFile = sourceFile;
             this.blockManagment = new BlockManagment(Environment.ProcessorCount);
+            this.data = new byte[blockLen];
         }
 
         public bool Run()
@@ -60,13 +62,12 @@ namespace SignatureCreator.Processes
 
         private Block GetNextBlock()
         {
-            byte[] data = new byte[blockLen];
             long i = sourceFile.Position % blockLen == 0 ? sourceFile.Position / blockLen + 1 : sourceFile.Position / blockLen + 2;
-            sourceFile.Read(data, 0, blockLen);
+            sourceFile.Read(this.data, 0, blockLen);
             Block block = new Processes.Block
             {
                 Id = i,
-                Data = data,
+                Data = this.data,
             };
             var a = System.Diagnostics.Process.GetCurrentProcess();
             if (a.WorkingSet64 > 3221225472)
