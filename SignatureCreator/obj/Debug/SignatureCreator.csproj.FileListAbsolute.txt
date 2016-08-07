@@ -1,5 +1,0 @@
-c:\users\remi\documents\visual studio 2015\Projects\SignatureCreator\SignatureCreator\bin\Debug\SignatureCreator.exe
-c:\users\remi\documents\visual studio 2015\Projects\SignatureCreator\SignatureCreator\bin\Debug\SignatureCreator.pdb
-c:\users\remi\documents\visual studio 2015\Projects\SignatureCreator\SignatureCreator\obj\Debug\SignatureCreator.csprojResolveAssemblyReference.cache
-c:\users\remi\documents\visual studio 2015\Projects\SignatureCreator\SignatureCreator\obj\Debug\SignatureCreator.exe
-c:\users\remi\documents\visual studio 2015\Projects\SignatureCreator\SignatureCreator\obj\Debug\SignatureCreator.pdb

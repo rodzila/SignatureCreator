@@ -1,4 +1,0 @@
-C:\Users\Remi\Documents\Visual Studio 2015\Projects\SignatureCreator\SignatureCreator\bin\Release\SignatureCreator.exe
-C:\Users\Remi\Documents\Visual Studio 2015\Projects\SignatureCreator\SignatureCreator\bin\Release\SignatureCreator.pdb
-C:\Users\Remi\Documents\Visual Studio 2015\Projects\SignatureCreator\SignatureCreator\obj\Release\SignatureCreator.exe
-C:\Users\Remi\Documents\Visual Studio 2015\Projects\SignatureCreator\SignatureCreator\obj\Release\SignatureCreator.pdb
